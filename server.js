@@ -20,8 +20,8 @@ var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Bootstrap models
 var modelsPath = path.join(__dirname, 'lib/models');
-fs.readdirSync(modelsPath).forEach(function (file) {
-  require(modelsPath + '/' + file);
+fs.readdirSync(modelsPath).forEach(function(file) {
+    require(modelsPath + '/' + file);
 });
 
 // Passport Configuration
@@ -42,8 +42,8 @@ require('./lib/config/socket')(io, app, passport, expressConfig);
 require('./lib/routes')(app);
 
 // Start server
-server.listen(config.port, function () {
-  console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
+server.listen(config.port, function() {
+    console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
 
 // Expose app
